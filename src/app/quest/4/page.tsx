@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const FirstQuestPage: React.FC = () => {
   const router = useRouter();
   return (
-    <div className="mt-5 flex flex-col items-center justify-center overflow-scroll max-h-[100vh]">
+    <div className="p-6 max-w-md mx-auto text-center mt-20">
 <div className="relative flex w-full mb-12 items-center">
   <Image
     src={'/back-button.svg'}
