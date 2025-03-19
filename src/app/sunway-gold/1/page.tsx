@@ -20,8 +20,8 @@ const QuestsPage: React.FC = () => {
           <p>Conquer the tasks, crack the clues,  and claim this treasure! 
           RM1000 awaits—let the hunt begin!</p>
           <div className="h-[50vh] mt-[5vh] space-y-4 pt-6 bg-white rounded-tl-2xl rounded-tr-2xl">
-<div className=" w-[85%] rounded-xl mx-auto px-8 bg-[#50D6D6] text-white text-center p-6">
-<h3>
+<div className="w-[85%] rounded-xl mx-auto px-8 bg-[#50D6D6] text-white text-center p-6" onClick={() => router.push('/sunway-gold/1/clue-summary')}>
+<h3 className="font-bold text-3xl">
 All Clues Unlocked!
 </h3>
 <p>
