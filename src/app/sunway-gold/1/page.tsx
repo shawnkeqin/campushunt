@@ -2,7 +2,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import QuestsLayout from './layout';
-import Image from 'next/image';
 const steps = [
   { title: "The treasure lies near the path where many first step onto campus—look for the wide arch with the golden letters.", link: '/sunway-gold/1' },
   { title: "The next hint is hidden where students gather for books and coffee. Head to the place of knowledge and caffeine.", link: '/sunway-sg/1' },

@@ -1,8 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
 import QuestsLayout from './layout';
-import Image from 'next/image';
 
 const steps = [
   { title: "Edit Profile", link: '/edit-profile' },

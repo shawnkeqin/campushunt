@@ -1,13 +1,7 @@
 'use client'
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import QuestsLayout from './layout';
-import Image from 'next/image';
-const steps = [
-  { title: "The treasure lies near the path where many first step onto campus—look for the wide arch with the golden letters.", link: '/sunway-gold/1' },
-  { title: "Sunway SG 1", link: '/sunway-sg/1' },
-  { title: "Sunway Silver 1", link: '/sunway-silver/1' },
-];
+
 
 const QuestsPage: React.FC = () => {
 
