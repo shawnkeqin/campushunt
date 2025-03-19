@@ -5,8 +5,8 @@ import QuestsLayout from './layout';
 import Image from 'next/image';
 const steps = [
   { title: "The treasure lies near the path where many first step onto campus—look for the wide arch with the golden letters.", link: '/sunway-gold/1' },
-  { title: "Sunway SG 1", link: '/sunway-sg/1' },
-  { title: "Sunway Silver 1", link: '/sunway-silver/1' },
+  { title: "The next hint is hidden where students gather for books and coffee. Head to the place of knowledge and caffeine.", link: '/sunway-sg/1' },
+  { title: "The treasure isn’t far, just past the first stone laid in the year of the university’s foundation.", link: '/sunway-silver/1' },
 ];
 
 const QuestsPage: React.FC = () => {
@@ -19,7 +19,17 @@ const QuestsPage: React.FC = () => {
           <h1 className="text-4xl font-bold pb-0 pt-[20%]">Sunway Gold 1</h1>
           <p>Conquer the tasks, crack the clues,  and claim this treasure! 
           RM1000 awaits—let the hunt begin!</p>
-          <ul className="h-[50vh] mt-[5vh] space-y-4 pt-6 bg-white rounded-tl-2xl rounded-tr-2xl">
+          <div className="h-[50vh] mt-[5vh] space-y-4 pt-6 bg-white rounded-tl-2xl rounded-tr-2xl">
+<div className=" w-[85%] rounded-xl mx-auto px-8 bg-[#50D6D6] text-white text-center p-6">
+<h3>
+All Clues Unlocked!
+</h3>
+<p>
+You’ve cracked every hint! Tap here to piece it all together and find where the treasure is waiting for you.
+</p>
+</div>
+
+<ul>
             {steps.map((step, index) => (
               <li
                 key={index}
@@ -30,7 +40,8 @@ const QuestsPage: React.FC = () => {
                 <p className="!text-left justify-center font-bold">{index + 1}</p> <p className='text-start'>{step.title}</p> 
               </li>
             ))}
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </QuestsLayout>
