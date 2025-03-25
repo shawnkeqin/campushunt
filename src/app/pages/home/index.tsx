@@ -15,6 +15,7 @@ const HomePage: React.FC = () => {
         <h1 className="text-4xl text-[#11446D] font-bold mb-4">Welcome to Campus Hunt</h1>
         <h2 className="text-2xl text-[#11446D] font-thin mb-6">We need to create a hunter profile for you first</h2>
         <form className="space-y-4 h-[60vh] flex flex-col flex-grow">
+          <label className="text-[#11446D] text-start">Name</label>
           <input
             type="text"
             placeholder="Enter your name..."
@@ -22,6 +23,7 @@ const HomePage: React.FC = () => {
             onChange={(e) => setName(e.target.value)}
             className="rounded-full w-full py-4 p-2 text-[#11446D] border border-[#E7ECF0]"
           />
+                    <label className="text-[#11446D] text-start">Email</label>
           <input
             type="email"
             placeholder="Enter your email address..."

@@ -1,10 +1,13 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const FirstQuestPage: React.FC = () => {
   const router = useRouter();
+  const [secretCode, setSecretCode] = useState('');
+  const [hintVisible, setHintVisible] = useState(false);
+
   return (
     <div className="p-6 max-w-md mx-auto text-center mt-20">
       <div className="p-6 max-w-md mx-auto text-center mt-20">
@@ -31,19 +34,30 @@ const FirstQuestPage: React.FC = () => {
           <input
             type="text"
             placeholder="Enter the secret code..."
-            className="w-full p-4 rounded-2xl border border-[#E7ECF0]"
+            className="text-[#11446D] w-full p-4 rounded-2xl border border-[#E7ECF0]"
+            value={secretCode}
+            onChange={(e) => setSecretCode(e.target.value)}
           />
           <button
             type="button"
-            className="mb-4 w-full max-w-md p-2 py-5 bg-gradient-to-r from-[#4FD5D5] to-[#2595F7] text-white rounded-full"
+            className={`mb-4 w-full max-w-md p-2 py-5 rounded-full text-white ${
+              secretCode
+                ? 'bg-gradient-to-r from-[#4FD5D5] to-[#2595F7] cursor-pointer'
+                : 'bg-gray-300 cursor-not-allowed'
+            }`}
+            onClick={() => setHintVisible(true)}
+            disabled={!secretCode}
           >
             REVEAL A HINT
           </button>
         </form>
-        <div className="text-left p-6 bg-white mt-10 rounded-3xl border border-[#11446D]">
-          <h2 className="text-2xl text-[#11446D] font-bold mb-2">The Hint</h2>
-          <p className="text-lg mb-6 text-[#11446D]">The treasure is hidden somewhere ....</p>
-        </div>
+
+        {hintVisible && (
+          <div className="text-left p-6 bg-white mt-10 rounded-3xl border border-[#11446D]">
+            <h2 className="text-2xl text-[#11446D] font-bold mb-2">The Hint</h2>
+            <p className="text-lg mb-6 text-[#11446D]">The treasure is hidden somewhere ....</p>
+          </div>
+        )}
       </div>
     </div>
   );
