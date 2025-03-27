@@ -25,7 +25,7 @@ const FirstQuestPage: React.FC = () => {
           </p>
         </div>
 
-        <h1 className="text-4xl text-[#11446D] font-bold mb-4">Go to UniLah Booth</h1>
+        <h1 className="text-4xl text-[#11446D] font-extrabold mb-4">Go to UniLah Booth</h1>
         <p className="text-lg mb-6 text-[#11446D]">
           Head over the UniLah Booth and mention that you are hunting for treasure! The NPC will provide you with a secret code that will reveal a hint.
         </p>
