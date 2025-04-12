@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        hornbill: ["'Hornbill Trial'", "sans-serif"], // Add your fallback font
+        hornbill: ['var(--font-hornbill)'],
       },
     },
   },

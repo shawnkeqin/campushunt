@@ -1,12 +1,26 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 const FirstQuestPage: React.FC = () => {
+  const params = useParams();
   const router = useRouter();
   const [secretCode, setSecretCode] = useState('');
   const [hintVisible, setHintVisible] = useState(false);
+  const questId = params.id
+  const handleRevealHint = () => {
+    setHintVisible(false); // Reset visibility for animation
+    setTimeout(() => {
+      setHintVisible(true); // Show the hint with animation
+    }, 100); // Small delay to trigger the animation
+    console.log(questId)
+    const revealedQuests = JSON.parse(localStorage.getItem('revealedQuests') || '[]');
+    if (!revealedQuests.includes('1')) {
+      revealedQuests.push('1');
+      localStorage.setItem('revealedQuests', JSON.stringify(revealedQuests));
+    }
+  };
 
   return (
     <div className="p-6 max-w-md mx-auto text-center mt-20">
@@ -45,19 +59,22 @@ const FirstQuestPage: React.FC = () => {
                 ? 'bg-gradient-to-r from-[#4FD5D5] to-[#2595F7] cursor-pointer'
                 : 'bg-gray-300 cursor-not-allowed'
             }`}
-            onClick={() => setHintVisible(true)}
+            onClick={handleRevealHint}
             disabled={!secretCode}
           >
             REVEAL A HINT
           </button>
         </form>
 
-        {hintVisible && (
-          <div className="text-left p-6 bg-white mt-10 rounded-3xl border border-[#11446D]">
-            <h2 className="text-2xl text-[#11446D] font-bold mb-2">The Hint</h2>
-            <p className="text-lg mb-6 text-[#11446D]">The treasure is hidden somewhere ....</p>
-          </div>
-        )}
+        <div
+  className={`text-left p-6 bg-white mt-10 rounded-3xl border border-[#11446D] transform transition-all duration-500 ease-in-out
+    ${hintVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'}
+  `}
+>
+  <h2 className="text-2xl text-[#11446D] font-bold mb-2">The Hint</h2>
+  <p className="text-lg mb-6 text-[#11446D]">The treasure is hidden somewhere ....</p>
+</div>
+
       </div>
     </div>
   );

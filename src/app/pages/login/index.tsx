@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="relative min-h-screen flex flex-col justify-center items-center">
       <div className="p-6 max-w-md mx-auto h-[80vh] text-center">
-        <h1 className="text-4xl text-[#11446D] font-bold mb-4">Welcome to Campus Hunt</h1>
+        <h1 className="text-5xl text-[#11446D] font-[1000] mb-4">Welcome to Campus Hunt</h1>
         <h2 className="text-2xl text-[#11446D] font-thin mb-6">We need to create a hunter profile for you first</h2>
         <form className="space-y-4 h-[60vh] flex flex-col flex-grow">
           <label className="text-[#11446D] text-start">Name</label>
